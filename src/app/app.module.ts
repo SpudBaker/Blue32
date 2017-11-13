@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   { path: 'company', component: CompanyComponent },
   { path: 'home', component: HomeComponent },
   { path: '',
-    redirectTo: '/company',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
