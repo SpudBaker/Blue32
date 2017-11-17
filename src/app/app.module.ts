@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule, MatToolbarModule, MatButtonModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatTabsModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { CompanyComponent } from './company/company.component';
@@ -19,7 +19,7 @@ const appRoutes: Routes = [
   { path: 'company', component: CompanyComponent },
   { path: 'home', component: HomeComponent },
   { path: 'services', component: ServicesComponent },
-  { path: 'technology', component: TechnologyComponent },
+  { path: 'technology', component: TechnologyComponent},
   { path: 'method', component: MethodComponent },
   { path: 'examples', component: ExamplesComponent },
   { path: 'references', component: ReferencesComponent },
@@ -53,7 +53,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

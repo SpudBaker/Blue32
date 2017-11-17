@@ -14,7 +14,8 @@
 
 .fill-content {
   padding-left: 100px;
-  padding-top: 50px;
+  padding-top: 00px;
+  padding-right: 100px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -25,6 +26,10 @@
 
 .button-width {
 width: 120px
+}
+
+.tab-content {
+  padding: 16px;
 }
 
 html, body, material-app, mat-sidenav-container, .my-content {
