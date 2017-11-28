@@ -3,22 +3,20 @@
     <span class="fill-remaining-space"></span>
     <span><img src="./assets/32BlueLogo.png" height="50" align="bottom"></span>
 </mat-toolbar>
-<mat-sidenav-container>
-<mat-sidenav mode="side" opened="true" disableClose>
-  <!-- sidenav content -->
-  <div>
-    <a mat-button class="button-width" routerLink = "home">Home</a><br/>
-    <a mat-button class="button-width" routerLink = "company">Company</a><br/>
-    <a mat-button class="button-width" routerLink = "services">Services</a><br/>
-    <a mat-button class="button-width" routerLink = "technology">Technology</a><br/>
-    <a mat-button class="button-width" routerLink = "method">Method</a><br/>
-    <a mat-button class="button-width" routerLink = "examples">Examples</a><br/>
-    <a mat-button class="button-width" routerLink = "references">References</a><br/>
-    <a mat-button class="button-width" routerLink = "contact">Contact</a><br/>
-  </div>
-</mat-sidenav>
+<mat-menu #appMenu="matMenu">
+        <button mat-menu-item routerLink = "home"> Home </button>
+        <button mat-menu-item routerLink = "company"> Company </button>
+        <button mat-menu-item routerLink = "services"> Services </button>
+        <button mat-menu-item routerLink = "technology"> Technology </button>
+        <button mat-menu-item routerLink = "method"> Method </button>
+        <button mat-menu-item routerLink = "examples"> Examples </button>
+        <button mat-menu-item routerLink = "references"> References </button>
+        <button mat-menu-item routerLink = "contact"> Contact </button>
+</mat-menu>
+<button mat-icon-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>menu</mat-icon>
+</button>
 <!-- primary content -->
   <div class="fill-content"><router-outlet></router-outlet></div>
-</mat-sidenav-container>
 
 

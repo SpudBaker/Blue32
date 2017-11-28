@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatTabsModule } from '@angular/material';
-
+import { MatToolbarModule, MatButtonModule, MatTabsModule, MatMenuModule, MatIconModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { CompanyComponent } from './company/company.component';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
@@ -51,10 +50,11 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
