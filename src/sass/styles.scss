@@ -6,6 +6,7 @@
 // import our custom theme
 @import 'my-theme.scss';
 
+
 // specify theme class eg: <body class="my-theme"> ... </body>
 .my-theme {
   // use our theme with angular-material-theme mixin
@@ -16,6 +17,18 @@
 /* Every toolbar row uses a flexbox row layout. */
 .fill-remaining-space {
     flex: 0 1 100%;
+    text-align: center ;
+  }
+
+  /* toolbar style */
+  .toolbar {
+    min-height: 75px;
+  }
+
+  @media ($mat-xsmall) { 
+      toolbar {
+      min-height: 50px;
+    }
   }
 
 .flex_container {
@@ -24,9 +37,6 @@
 }
 
 .fill-content {
-  padding-left: 100px;
-  padding-top: 00px;
-  padding-right: 100px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -39,11 +49,63 @@
 width: 120px
 }
 
-.tab-content {
-  padding: 16px;
+@media (max-width:600px) {
+  .tab-content {
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
-html, body, material-app, mat-sidenav-container, .my-content {
+@media (min-width:600px) and (max-width:800px) {
+  .tab-content {
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (min-width:800px) and (max-width:1000px) {
+  .tab-content {
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (min-width:1000px) and (max-width:1250px) {
+  .tab-content {
+    padding-top: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
+@media (min-width:1250px) and (max-width:1500px) {
+  .tab-content {
+    padding-top: 50px;
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
+
+@media (min-width:1500px) and (max-width:2000px) {
+  .tab-content {
+    padding-top: 50px;
+    padding-left: 500px;
+    padding-right: 500px;
+  }
+}
+
+@media (min-width:2000px) {
+  .tab-content {
+    padding-top: 50px;
+    padding-left: 700px;
+    padding-right: 700px;
+  }
+}
+
+html, body, material-app, .my-content {
 margin: 0;
 width: 100%;
 height: 100%;
