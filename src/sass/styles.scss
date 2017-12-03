@@ -25,12 +25,6 @@
     min-height: 75px;
   }
 
-  @media ($mat-xsmall) { 
-      toolbar {
-      min-height: 50px;
-    }
-  }
-
 .flex_container {
   display: flex;
   width: 100%;
@@ -49,11 +43,18 @@
 width: 120px
 }
 
+.supportedScreenSizes {
+  text-align: center;
+}
+
 @media (max-width:600px) {
   .tab-content {
     padding-top: 50px;
     padding-left: 50px;
     padding-right: 50px;
+  }
+  .unSupportedScreenSizes {
+      display: none;
   }
 }
 
@@ -63,6 +64,10 @@ width: 120px
     padding-left: 100px;
     padding-right: 100px;
   }
+
+  .supportedScreenSizes {
+    display: none;
+  }
 }
 
 @media (min-width:800px) and (max-width:1000px) {
@@ -70,6 +75,9 @@ width: 120px
     padding-top: 50px;
     padding-left: 150px;
     padding-right: 150px;
+  }
+  .supportedScreenSizes {
+    display: none;
   }
 }
 
@@ -79,6 +87,9 @@ width: 120px
     padding-left: 200px;
     padding-right: 200px;
   }
+  .supportedScreenSizes {
+    display: none;
+  }
 }
 
 @media (min-width:1250px) and (max-width:1500px) {
@@ -86,6 +97,9 @@ width: 120px
     padding-top: 50px;
     padding-left: 300px;
     padding-right: 300px;
+  }
+  .supportedScreenSizes {
+    display: none;
   }
 }
 
@@ -95,6 +109,9 @@ width: 120px
     padding-left: 500px;
     padding-right: 500px;
   }
+  .supportedScreenSizes {
+    display: none;
+  }
 }
 
 @media (min-width:2000px) {
@@ -102,6 +119,9 @@ width: 120px
     padding-top: 50px;
     padding-left: 700px;
     padding-right: 700px;
+  }
+  .supportedScreenSizes {
+    display: none;
   }
 }
 
