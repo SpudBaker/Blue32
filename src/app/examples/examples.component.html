@@ -1,9 +1,50 @@
 <mat-tab-group>
-        <mat-tab label="Dynamic">
+        <mat-tab label="Table">
                 <div class="tab-content">
-                        Show large nested table of data<br/><br/>
-
-                        and more
+                        <div>
+                                <mat-form-field>
+                                        <mat-select placeholder="Country">
+                                                <mat-option *ngFor="let country of getCountries()" [value]="country.code">
+                                                        {{ country.name }}
+                                                </mat-option>
+                                        </mat-select>
+                                </mat-form-field><br/>
+                                <mat-form-field>
+                                        <input matInput (keyup)="applyIcaoFilter($event.target.value)" placeholder="ICAO Filter">
+                                </mat-form-field>
+                                
+                                <mat-slider min=0 max=10000 displayValue='Elevation' thumbLabel='Elevation' value="1000"></mat-slider>
+                              
+                                <mat-table #table [dataSource]="dataSource">
+                              
+                                  <!-- icao Column -->
+                                  <ng-container matColumnDef="icao">
+                                    <mat-header-cell *matHeaderCellDef> ICAO </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.icao}} </mat-cell>
+                                  </ng-container>
+                              
+                                  <!-- Name Column -->
+                                  <ng-container matColumnDef="name">
+                                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                                  </ng-container>
+                              
+                                  <!-- City Column -->
+                                  <ng-container matColumnDef="city">
+                                    <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.city}} </mat-cell>
+                                  </ng-container>
+                              
+                                  <!-- Elevation Column -->
+                                  <ng-container matColumnDef="elevation">
+                                    <mat-header-cell *matHeaderCellDef> Elevation </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.elevation}} </mat-cell>
+                                  </ng-container>
+                              
+                                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                                </mat-table>
+                              </div>
                 </div>
         </mat-tab>
         <mat-tab label="Data">
