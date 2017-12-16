@@ -1,19 +1,25 @@
 <mat-tab-group>
-        <mat-tab label="Table">
+        <mat-tab label="Overview">
+        `       <div class="tab-content">
+                        Selecting the 'Airports' tab will demonstrate sample data being retreived from a database on the cloud server.<br/><br/>
+                        By default airports in the UK are listed. Use the dropdown to select another country (e.g Ukraine) noting response times resulting from the lightweight architecture. <br/><br/>
+                        Selecting United States is an example of poor design as far too much data is being returned to be useful (circa 5000 records). In practice a more optimised search mechansim would be used. However the data is still presented within a sensible, albeit slower, response time.<br/><br/>
+                        Text can be entered into a filter which is immediately applied to the results. 
+                </div>
+        </mat-tab>
+        <mat-tab label="Airports">
                 <div class="tab-content">
-                        <div>
+                        <div align='center'>
                                 <mat-form-field>
-                                        <mat-select placeholder="Country">
-                                                <mat-option *ngFor="let country of getCountries()" [value]="country.code">
+                                        <mat-select (MatSelectChange)="callAirportsService()" placeholder="Country" [(ngModel)]='selectedCountry'(ngModelChange)="countryChange()">
+                                                <mat-option *ngFor="let country of getCountries()" value={{country.code}}>
                                                         {{ country.name }}
                                                 </mat-option>
                                         </mat-select>
-                                </mat-form-field><br/>
-                                <mat-form-field>
-                                        <input matInput (keyup)="applyIcaoFilter($event.target.value)" placeholder="ICAO Filter">
                                 </mat-form-field>
-                                
-                                <mat-slider min=0 max=10000 displayValue='Elevation' thumbLabel='Elevation' value="1000"></mat-slider>
+                                <mat-form-field>
+                                        <input matInput (keyup)="applyIcaoFilter($event.target.value)" placeholder="ICAO/Name Filter">
+                                </mat-form-field>
                               
                                 <mat-table #table [dataSource]="dataSource">
                               
@@ -35,24 +41,10 @@
                                     <mat-cell *matCellDef="let element"> {{element.city}} </mat-cell>
                                   </ng-container>
                               
-                                  <!-- Elevation Column -->
-                                  <ng-container matColumnDef="elevation">
-                                    <mat-header-cell *matHeaderCellDef> Elevation </mat-header-cell>
-                                    <mat-cell *matCellDef="let element"> {{element.elevation}} </mat-cell>
-                                  </ng-container>
-                              
                                   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                                   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
                                 </mat-table>
                               </div>
-                </div>
-        </mat-tab>
-        <mat-tab label="Data">
-                <div class="tab-content">
-                        Show large nested table of data<br/><br/>
-                        Show graphs
-
-                        and more
                 </div>
         </mat-tab>
 </mat-tab-group>
