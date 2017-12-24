@@ -106,19 +106,30 @@ width: 120px
 @media (min-width:1500px) and (max-width:2000px) {
   .tab-content {
     padding-top: 50px;
-    padding-left: 500px;
-    padding-right: 500px;
+    padding-left: 550px;
+    padding-right: 550px;
   }
   .supportedScreenSizes {
     display: none;
   }
 }
 
-@media (min-width:2000px) {
+@media (min-width:2000px) and (max-width:2500px)  {
   .tab-content {
     padding-top: 50px;
     padding-left: 700px;
     padding-right: 700px;
+  }
+  .supportedScreenSizes {
+    display: none;
+  }
+}
+
+@media (min-width:2500px) {
+  .tab-content {
+    padding-top: 50px;
+    padding-left: 850px;
+    padding-right: 850px;
   }
   .supportedScreenSizes {
     display: none;
